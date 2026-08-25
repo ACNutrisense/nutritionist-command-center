@@ -63,7 +63,7 @@ body {
   position: absolute;
   left: 32px;
   right: 32px;
-  bottom: 28px;
+  bottom: 38px;
   color: white;
 }
 
@@ -89,15 +89,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 72px;
-  padding: 8px 34px;
+  min-height: 56px;
+  padding: 6px 18px;
   border-bottom: 1px solid var(--line);
   background: #f8faf9;
 }
 
 .brand img {
   display: block;
-  width: min(100%, 300px); opacity:.92; mix-blend-mode:multiply;
+  width:min(92%,520px);
   height: auto;
 }
 
@@ -237,7 +237,29 @@ footer {
 }
 
 
-/* V2 alternating rows */
-.tool-card:nth-child(odd){background:#ffffff;}
-.tool-card:nth-child(even){background:#f6f8f8;}
-.tool-card:hover,.tool-card:focus-visible{background:#edf5f4;}
+/* --- V3 polish --- */
+.brand{
+  background:linear-gradient(180deg,#fafbfb,#f2f5f4);
+}
+.brand img{
+  display:block;
+  opacity:1;
+}
+.link-list{
+  gap:10px;
+  padding:14px;
+  background:#eef2f1;
+}
+.tool-card{
+  border:1px solid #dde5e4;
+  border-radius:16px;
+  box-shadow:0 2px 8px rgba(14,52,56,.06);
+  border-bottom:none;
+}
+.tool-card:nth-child(odd){background:#fff;}
+.tool-card:nth-child(even){background:#f8fbfb;}
+.tool-card:hover,.tool-card:focus-visible{
+  background:#edf7f5;
+  transform:translateY(-1px);
+}
+footer{display:none;}
