@@ -263,3 +263,17 @@ footer {
   transform:translateY(-1px);
 }
 footer{display:none;}
+
+
+/* V4 logo refinement */
+.brand{
+  background:#fff !important;
+  padding:10px 20px !important;
+  min-height:0 !important;
+  border-bottom:1px solid #eef2f1;
+}
+.brand img{
+  width:min(95%,480px) !important;
+  max-width:480px !important;
+  display:block;
+}
