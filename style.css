@@ -89,15 +89,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 104px;
-  padding: 20px 34px;
+  min-height: 72px;
+  padding: 8px 34px;
   border-bottom: 1px solid var(--line);
   background: #f8faf9;
 }
 
 .brand img {
   display: block;
-  width: min(100%, 400px);
+  width: min(100%, 300px); opacity:.92; mix-blend-mode:multiply;
   height: auto;
 }
 
@@ -235,3 +235,9 @@ footer {
     transition: none;
   }
 }
+
+
+/* V2 alternating rows */
+.tool-card:nth-child(odd){background:#ffffff;}
+.tool-card:nth-child(even){background:#f6f8f8;}
+.tool-card:hover,.tool-card:focus-visible{background:#edf5f4;}
