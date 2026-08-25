@@ -1,0 +1,299 @@
+/* ==========================================================
+   Nutritionist Command Center — clean production stylesheet
+   Replace the ENTIRE contents of style.css with this file.
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --teal: #0e3438;
+  --teal-hover: #16484d;
+  --ink: #153235;
+  --muted: #607174;
+  --page: #eef2f1;
+  --surface: #ffffff;
+  --border: #dfe6e6;
+  --icon-bg: #e9f0ef;
+  --shadow: 0 3px 10px rgba(14, 52, 56, 0.07);
+  --shadow-hover: 0 8px 20px rgba(14, 52, 56, 0.11);
+}
+
+html {
+  background: var(--page);
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+  color: var(--ink);
+  background: var(--page);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  width: min(100%, 620px);
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--surface);
+  box-shadow: 0 12px 34px rgba(14, 52, 56, 0.10);
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  background: #dfe6e6;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 48%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 23, 25, 0.05) 5%,
+    rgba(6, 23, 25, 0.14) 46%,
+    rgba(6, 23, 25, 0.72) 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 34px;
+  color: #fff;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(45px, 8.2vw, 58px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+
+/* WORDMARK
+   logo.png is now a transparent, tightly cropped wordmark. */
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92px;
+  padding: 18px 28px;
+  background: #fff;
+}
+
+.brand img {
+  display: block;
+  width: 72%;
+  max-width: 390px;
+  height: auto;
+}
+
+/* NAVIGATION */
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 14px 18px;
+  background: var(--page);
+}
+
+.tool-card {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 14px;
+  min-height: 78px;
+  padding: 15px 22px;
+  color: var(--ink);
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.tool-card:nth-child(even) {
+  background: #f9fbfb;
+}
+
+.tool-card:hover,
+.tool-card:focus-visible {
+  background: #f2f8f7;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.tool-card:active {
+  transform: translateY(0);
+}
+
+.tool-card:focus-visible {
+  outline: 3px solid rgba(14, 52, 56, 0.20);
+  outline-offset: 2px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--icon-bg);
+  color: var(--teal);
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.label {
+  min-width: 0;
+  font-size: 17px;
+  line-height: 1.22;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.label small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.chevron,
+.external-mark {
+  justify-self: end;
+  line-height: 1;
+}
+
+.chevron {
+  color: #8b999b;
+  font-size: 28px;
+}
+
+.external .icon {
+  background: var(--teal);
+  color: #fff;
+}
+
+.external-mark {
+  color: var(--teal);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* MOBILE / SIDEPANE */
+
+@media (max-width: 620px) {
+  .shell {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .hero {
+    height: 350px;
+  }
+
+  .hero-content {
+    left: 32px;
+    right: 24px;
+    bottom: 34px;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 9vw, 56px);
+  }
+
+  .brand {
+    min-height: 88px;
+    padding: 17px 24px;
+  }
+
+  .brand img {
+    width: 74%;
+    max-width: 380px;
+  }
+
+  .link-list {
+    padding: 14px 14px 18px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    height: 325px;
+  }
+
+  .hero-content {
+    left: 22px;
+    right: 20px;
+    bottom: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 11vw, 50px);
+  }
+
+  .brand {
+    min-height: 80px;
+    padding: 15px 20px;
+  }
+
+  .brand img {
+    width: 78%;
+  }
+
+  .tool-card {
+    grid-template-columns: 38px minmax(0, 1fr) 20px;
+    min-height: 72px;
+    padding: 13px 18px;
+    gap: 12px;
+  }
+
+  .icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-card {
+    transition: none;
+  }
+}
